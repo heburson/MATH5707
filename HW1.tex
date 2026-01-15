@@ -1,0 +1,112 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{enumitem}
+\usepackage[colorlinks]{hyperref}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{multicol}
+\usetikzlibrary{arrows}
+\usetikzlibrary{calc, positioning, fit, shapes.misc}
+
+\title{MATH 5707 (Spring 2026): Homework 1}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Directions and Introduction}
+
+Submit a pdf of your solutions to the HW 1 assignment on Gradescope by 11:59 pm on [Date].
+
+Problem 2 is marked as a peer review problem. \href{https://docs.google.com/document/d/1jSw9pmMJJFUx_6dTkcUi4k4HJNIrrIIgs9zdWhAycx0/edit?usp=sharing}{This document} gives directions and deadlines for the peer review process.
+
+When working on this assignment, you should focus on the following goals:
+\begin{itemize}
+    \item Demonstrate fluency with the skill of proving that two graphs are or are not isomorphic.
+    \item Clearly communicate solutions using complete sentences and enough explanation that another 5707 student could follow your work.
+    \item Demonstrate fluency with the concept of degree sequences.
+    \item Translate a scenario or problem into a question or statement about graphs.
+    \item Demonstrate fluency with basic graph theory terminology and notation, such as $\nu(G)$, $\varepsilon(G)$, $\bar{G}$, bipartite, complete, simple graph, multigraph, cycles, etc.
+\end{itemize}
+
+
+\section*{Problems}
+
+\begin{enumerate}[label=\arabic*.]
+    \item Draw a simple graph $G$ that satisfies the following properties, or explain why no such graph can exist.
+    \begin{itemize}
+        \item $G$ is bipartite.
+        \item $\varepsilon(\bar{G})=12$.
+        \item $G$ contains a cycle of length $6$.
+        \item $\nu(G)$ is odd.
+    \end{itemize}
+
+    \item(Peer Review Problem; 1.5.7(a) from Bondy-Murty)
+    \begin{enumerate}[label=(\alph*)]
+        \item Let $\mathbf{d}=(d_1,d_2,\dots, d_n)$ be a non-increasing sequence of non-negative integers, and denote the sequence $(d_2-1, d_3-1,\dots,d_{d_1+1}-1,d_{d_1+2},\dots, d_n)$ by $\mathbf{d}'$. Show that, $\mathbf{d}$ is graphic if and only if $\mathbf{d}'$ is graphic.
+        \item Explain any changes you made as a result of the peer review process. Your explanation should clearly state what was wrong with your rough draft and what changes you made. \href{https://docs.google.com/document/d/1jSw9pmMJJFUx_6dTkcUi4k4HJNIrrIIgs9zdWhAycx0/edit?usp=sharing}{See the grading criteria} for Peer Review for reflection examples and templates.
+    \end{enumerate}
+
+    \item For each of the following sets of properties, either give an example graph that satisfies those properties or explain why no graph can exist.
+    \begin{enumerate}[label=(\alph*)]
+        \item A multigraph with degree sequence $(7, 6, 5, 4, 3, 3, 2)$.
+        \item A simple graph with degree sequence $(7, 6, 5, 4, 3, 3, 2)$.
+    \end{enumerate}
+
+    \item Determine which pairs of the following graphs are isomorphic. Justify your answers.
+    
+  \def\gap{6}
+		\def\bigrad{2}
+		\def\smrad{1}
+		\begin{center}
+			\begin{tikzpicture}[scale=.7]
+				\useasboundingbox (-\bigrad,-\bigrad) rectangle (\bigrad+3*\gap,\bigrad);
+					\foreach \i in {0,1,2}{
+						\foreach \j in {0,1,2,3,4}{
+							  \node[inner sep=1.8pt,fill,circle]    (\i;inner\j) at ($(\i*\gap,0)+(90-\j*72:\smrad)$){};
+							  \node[inner sep=1.8pt,fill,circle]    (\i;outer\j) at ($(\i*\gap,0)+(90-\j*72:\bigrad)$){};
+						}	
+					}
+					\foreach \j in {0,1,...,8}{
+						  \node[inner sep=1.8pt,fill,circle]    (3;\j) at ($(3*\gap,0)+(90-\j*40:\bigrad)$) {};
+					}
+					  \node[inner sep=1.8pt,fill,circle]    (3;hub) at (3*\gap,0) {};
+					\foreach \j in {0,1,2,3,4}{
+						\pgfmathtruncatemacro{\next}{Mod(\j+1,5)};
+						\pgfmathtruncatemacro{\sec}{Mod(\j+2,5)};
+						\draw   (0;inner\j) -- (0;inner\next);
+						\draw   (0;outer\j) -- (0;outer\next);
+						\draw   (0;inner\j) -- (0;outer\j);
+						\draw   (1;inner\j) -- (1;inner\sec);
+						\draw   (1;outer\j) -- (1;outer\next);
+						\draw   (1;inner\j) -- (1;outer\j);
+						\draw   (2;inner\j) -- (2;outer\next);
+						\draw   (2;outer\j) -- (2;inner\next);
+						\draw   (2;inner\j) -- (2;outer\j);
+					}
+					\foreach \j in {0,1,...,8}{
+						\pgfmathtruncatemacro{\next}{Mod(\j+1,9)};
+						\draw   (3;\j) -- (3;\next);
+					}
+					\foreach \j in {0,3,6}{
+						\draw   (3;hub) -- (3;\j);
+					}
+					\draw   (3;1) -- (3;5);
+					\draw   (3;4) -- (3;8);
+					\draw   (3;2) -- (3;7);
+			\end{tikzpicture}
+		\end{center}
+
+    \item Recall the Jumping Julia puzzle game we played on the first day of class. (\href{https://docs.google.com/document/d/1j-n6fgk1Z_MamSJ3g9W1Dm7nC-Zcp1TIzYb_CxZFeyQ/edit?usp=sharing}{See activity here.})
+    \begin{enumerate}[label=(\alph*)]
+        \item Consider Puzzle 1. Draw a graph on 16 vertices that represents the puzzle. Clearly state the criteria you are using to determine if two vertices are adjacent.
+        \item Explain how you can use the graph you drew to solve the Jumping Julia puzzle.
+    \end{enumerate}
+
+\end{enumerate}
+
+\end{document}
