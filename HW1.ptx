@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<title>MATH 5707 (Spring 2026): Homework 1</title>
+
+<section><title>Directions and Introduction</title>
+<p>Submit a pdf of your solutions to the HW 1 assignment on Gradescope by 11:59 pm on </p>
+<p>Problem 2 is marked as a peer review problem. <url href="https://docs.google.com/document/d/1jSw9pmMJJFUx_6dTkcUi4k4HJNIrrIIgs9zdWhAycx0/edit?usp=sharing">This document gives directions and deadlines for the peer review process.</url></p>
+
+<p>When working on this assignment, you should focus on the following goals:</p>
+<ul>
+<li> Demonstrate fluency with the skill of proving that two graphs are or are not isomorphic. </li>
+<li>Clearly communicate solutions using complete sentences and enough explanation that another 5707 student could follow your work.</li>
+<li> Demonstrate fluency with the concept of degree sequences. </li>
+<li> Translate a scenario or problem into a question or statement about graphs. </li>
+<li> Demonstrate fluency with basic graph theory terminology and notation, such as <m>\nu(G)</m>, <m>\epsilon(G)</m>, <m>\bar{G}</m>, bipartite, complete, simple graph, multigraph, cycles, etc. </li>
+</ul>
+</section>
+
+<section><title>Problems</title>
+<ol>
+  <li> <p>Draw a simple graph <m>G</m> that satisfies the following properties, or explain why no such graph can exist. </p>
+  <ul>
+    <li> <m>G</m> is bipartite.</li>
+    <li> <m>\varepsilon(\bar{G})=12</m>.</li>
+    <li> <m>G</m> contains a cycle of length <m>6</m>.</li>
+    <li> <m>\nu(G)</m> is odd.</li>
+    </ul>
+  </li>
+  <li><p> (Peer Review Problem; 1.5.7(a) from Bondy-Murty)</p>
+    
+  <ol><li> Let <m>{\bf d}=(d_1,d_2,\ldots, d_n)</m> be a non-increasing sequence of non-negative integers, and denote the sequence <m>(d_2-1, d_3-1,\ldots,d_{d_1+1}-1,d_{d_1+2},\ldots, d_n)</m> by <m>{\bf d}'</m>. Show that, <m>{\bf d} </m> is graphic if and only if <m>{\bf d}'</m> is graphic.</li>
+  <li>Explain any changes you made as a result of the peer review process. Your explanation should clearly state what was wrong with your rough draft and what changes you made. <url href="https://docs.google.com/document/d/1jSw9pmMJJFUx_6dTkcUi4k4HJNIrrIIgs9zdWhAycx0/edit?usp=sharing">See the grading criteria for Peer Review for reflection examples and templates.</url> </li>
+  </ol> </li> 
+  <li> <p>For each of the following sets of properties, either give an example graph that satisfies those properties or explain why no graph can exist.</p>
+<ol>
+  <li>A multigraph with degree sequence <m>(7, 6, 5,4, 3, 3, 2)</m>.</li>
+  <li>A simple graph with degree sequence <m>(7, 6, 5,4, 3, 3, 2)</m>.</li>
+</ol>
+
+  </li>
+  <li><p>Determine which pairs of the following graphs are isomorphic. Justify your answers. </p>
+<image source="https://raw.githubusercontent.com/heburson/MATH5707/77a1b7e38c0d8282105310671a01634e545763d5/HW1G1.png" width="50%">
+    <shortdescription>A graph on 10 vertices consisting of two concentric 5-cycles. Each vertex in the inner cycle is connected to exactly one vertex in the outer cycle and each vertex in the outer cycle is connected to exactly one vertex in the inner cycle.</shortdescription>
+    <description><p> The graph with vertex set <m>\{1,2,3,4,5,6,7,8,9,10\}</m> and edges <m>\{(1,2), (2,3), (3,4),(4,5), (5,1), (6,7),(7,8), (8,9), (9,10),(10,6), (1,6), (2,7),(3,8),(4,9),(5,10)\}</m>.</p></description>
+
+</image>
+<image source="https://raw.githubusercontent.com/heburson/MATH5707/6dce7c80ae022a6fe2191427a75de7c9816b6155/HW1G2.png" width="50%">
+    <shortdescription>A graph on 10 vertices consisting of a 5-pointed star inside a 5-cyle. Each vertex in the star connected to exactly one vertex in the outer cycle and each vertex in the outer cycle is connected to exactly one vertex in the star.</shortdescription>
+    <description><p> The graph with vertex set <m>\{1,2,3,4,5,6,7,8,9,10\}</m> and edges <m>\{(1,2), (2,3), (3,4),(4,5), (5,1), (6,8),(8,10), (10, 7), (7,9),(9,6), (1,6), (2,7),(3,8),(4,9),(5,10)\}</m>.</p></description>
+
+</image>
+<image source="https://raw.githubusercontent.com/heburson/MATH5707/6dce7c80ae022a6fe2191427a75de7c9816b6155/HW1G3.png" width="50%">
+     <shortdescription>The graph with vertex set <m>\{1,2,3,4,5,6,7,8,9,10\}</m> and edges <m>\{(1,3), (1,10), (2,3), (2, 4), (3,5), (4, 5), (4,6), (5,7), (6,7), (6,8), (7,9), (8,9), (8,10), (9,1), (10,2)/}</m> .</shortdescription>
+
+</image>
+<image source="https://raw.githubusercontent.com/heburson/MATH5707/6dce7c80ae022a6fe2191427a75de7c9816b6155/HW1G4.png" width="50%">
+   <shortdescription>The graph with vertex set <m>\{1,2,3,4,5,6,7,8,9,10\}</m> and edges <m>\{(1,2), (2,3), (3,4), (5,6), (6,7),(7,8), (8,9), (9,1), (1,10), (4,10), (7,10),  (2,6), (5, 9), (8,3)/}</m> .</shortdescription>
+   </image>
+  </li>
+  <li> <p>Recall the Jumping Julia puzzle game we played on the first day of class. (<url href="https://docs.google.com/document/d/1j-n6fgk1Z_MamSJ3g9W1Dm7nC-Zcp1TIzYb_CxZFeyQ/edit?usp=sharing">See activity here.</url>) </p>
+<ol>
+  <li>Consider Puzzle 1. Draw a graph on 16 vertices that represents the puzzle. Clearly state the criteria you are using to determine if two vertices are adjacent. </li>
+  <li>Explain how you can use the graph you drew to solve the Jumping Julia puzzle. </li>
+</ol>
+
+  </li>
+
+</ol>
+</section>
+
+ 
+
+ 
