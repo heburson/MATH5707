@@ -37,10 +37,25 @@ When working on this assignment, you should focus on showing fluency with the fo
 
 \begin{enumerate}
 \item[0.] If you would like any of these problems to be graded for proficiency with the core skills, list the skill and the corresponding problem. 
-  \item A certain tree $T$ of with $\nu=35$ is known to have 25 vertices of degree 1, two vertices of degree 2, three vertices of degree 4, one vertex of degree 5 and two vertices of degree 6. It also contains two vertices of the same (unknown) degree $x$. What is $x$? Justify your answer. 
+  \item Consider the graph $G$ below.
+  
+  \begin{center}
+    \begin{tikzpicture}
+    \draw[every node/.style={inner sep=1.8pt,fill,circle}]
+    (-1.5,-.2)node(x1){}--(-.5,0)node(x2){}--(.5,0)node(x3){}--(1.5,-.2)node(x4){};
+    \draw[every node/.style={inner sep=1.8pt,fill,circle}]
+    (0,1.3)node(a){} (0,-1.3)node(b){}
+    \foreach \x in {1,2,3,4}{
+    (a)--(x\x)--(b)};
+    \end{tikzpicture}
+  \end{center}
+  
+  \begin{enumerate}
+  \item Find all of the spanning trees of $G$.  Draw them all.
+  \item How many non-isomorphic spanning trees does $G$ have? Justify your answer by explaining why pairs of trees from part (a) are or are not isomorphic. 
+  \end{enumerate}
     \item  (2.1.12 from Bondy-Murty, peer review problem) A saturated hydrocarbon is a molecule $C_mH_n$ in which every carbon atom has four bonds, every hydrogen atom has one bond, and no sequence of bonds forms a cycle.  Show that, for every positive integer $m$, $C_mH_n$ can exist only if $n=2m+2$. 
 
-\newpage
   \item Prove or disprove the following statements. (Each part will be worth 4 points and graded as a separate problem.)
   \begin{enumerate}
   \item If $G$ is a tree with maximum degree at least $k$, then $G$ has at least $k$ leaves. 
